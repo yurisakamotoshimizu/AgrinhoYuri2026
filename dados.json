@@ -1,1 +1,37 @@
-
+{
+  "solos": {
+    "Terra Roxa": {
+      "cor": "roxa",
+      "descricao": "Muito fértil, ideal para café, soja e milho.",
+      "imagem": "imagens/terra-roxa.jpg"
+    },
+    "Argiloso": {
+      "cor": "marrom",
+      "descricao": "Rico em argila, retém água, bom para feijão e milho.",
+      "imagem": "imagens/argiloso.jpg"
+    },
+    "Arenoso": {
+      "cor": "amarelo",
+      "descricao": "Solto e seco, precisa de irrigação, bom para mandioca.",
+      "imagem": "imagens/arenoso.jpg"
+    }
+  },
+  "estados": {
+    "Paraná": "Terra Roxa",
+    "São Paulo": "Terra Roxa",
+    "Bahia": "Arenoso",
+    "Minas Gerais": "Argiloso"
+  },
+  "quiz": [
+    {
+      "pergunta": "Qual solo é mais fértil e ideal para café?",
+      "opcoes": ["Terra Roxa", "Arenoso", "Argiloso"],
+      "resposta": "Terra Roxa"
+    },
+    {
+      "pergunta": "Qual solo precisa de irrigação devido à secura?",
+      "opcoes": ["Argiloso", "Arenoso", "Terra Roxa"],
+      "resposta": "Arenoso"
+    }
+  ]
+}
