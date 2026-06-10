@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solo Brasil</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>🌱 Solo Brasil</h1>
+    <p>Conheça os solos que alimentam nosso país!</p>
+  </header>
 
+  <!-- Mapa interativo do Brasil -->
+  <main>
+    <section id="mapa-brasil">
+      <h2>Mapa Interativo</h2>
+      <img src="imagens/mapa-brasil.png" usemap="#brazilmap" alt="Mapa do Brasil">
+      <map name="brazilmap">
+        <!-- Exemplo para o Paraná -->
+        <area shape="poly" coords="..." alt="Paraná" onclick="mostrarSolo('Paraná')">
+      </map>
+      <div id="info-solo"></div>
+    </section>
+
+    <!-- Biblioteca de solos -->
+    <section id="biblioteca-solos">
+      <h2>Biblioteca de Solos</h2>
+      <div id="solos-container"></div>
+    </section>
+
+    <!-- Quiz de solos -->
+    <section id="quiz">
+      <h2>Quiz de Solos</h2>
+      <div id="pergunta"></div>
+      <div id="respostas"></div>
+      <button onclick="proximaPergunta()">Próxima</button>
+      <div id="pontuacao"></div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Projeto Agrinho 2026 – 3º Ano</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
