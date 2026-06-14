@@ -5,7 +5,7 @@ const dadosProjeto = {
       descricao: "Solo avermelhado e ultra fértil devido à decomposição de rochas basálticas. Muito comum no Paraná!",
       curiosidade: "Os imigrantes italianos o chamavam de 'terra rossa' (terra vermelha), e os brasileiros adaptaram para 'roxa'!",
       culturas: ["Café", "Soja", "Milho"],
-      img src: "imagem/sul.jpeg"
+      imagem: "imagens/terra-roxa.jpg"
     },
     "Argiloso": {
       descricao: "Composto por partículas muito pequenas de argila. Retém muita água, ficando barro quando chove e rachado quando seca.",
@@ -33,11 +33,11 @@ const dadosProjeto = {
     }
   },
   estados: {
-    "Sul": "Terra Roxa",
-    "Sudeste": "Argilosa",
-    "Nordeste": "Arenoso",
-    "Centro-oeste": "Calcário",
-    "Norte": "Humoso"
+    "Paraná": "Terra Roxa",
+    "São Paulo": "Terra Roxa",
+    "Bahia": "Arenoso",
+    "Minas Gerais": "Argiloso",
+    "Amazonas": "Humoso"
   },
   quiz: [
     {
