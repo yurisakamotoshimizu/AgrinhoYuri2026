@@ -5,39 +5,39 @@ const dadosProjeto = {
       descricao: "Solo avermelhado e ultra fértil devido à decomposição de rochas basálticas. Muito comum no Paraná!",
       curiosidade: "Os imigrantes italianos o chamavam de 'terra rossa' (terra vermelha), e os brasileiros adaptaram para 'roxa'!",
       culturas: ["Café", "Soja", "Milho"],
-      imagem: "imagens/terra-roxa.jpg"
+      imagem: "imagem/sul.jpeg"
     },
     "Argiloso": {
       descricao: "Composto por partículas muito pequenas de argila. Retém muita água, ficando barro quando chove e rachado quando seca.",
       curiosidade: "É excelente para segurar nutrientes, mas o agricultor precisa cuidar para não encharcar as raízes.",
       culturas: ["Arroz", "Milho", "Soja"],
-      imagem: "imagens/argiloso.jpg"
+      imagem: "imagem/suldeste.jpeg"
     },
     "Arenoso": {
       descricao: "Solo leve, com textura de areia. A água passa muito rápido por ele (alta drenagem), levando embora os nutrientes.",
       curiosidade: "Precisa de muita matéria orgânica (adubo natural) e irrigação controlada para produzir bem.",
       culturas: ["Mandioca", "Pastagem", "Abacaxi"],
-      imagem: "imagens/arenoso.jpg"
+      imagem: "imagem/nordeste.jpeg"
     },
     "Humoso": {
       descricao: "Também conhecido como terra preta. É riquíssimo em matéria orgânica (folhas e restos de plantas decompostas).",
       curiosidade: "É o solo favorito das minhocas e hortas caseiras por ser super fofo e nutritivo.",
       culturas: ["Hortaliças", "Milho", "Legumes"],
-      imagem: "imagens/humoso.jpg"
+      imagem: "imagem/norte.jpeg"
     },
     "Calcário": {
       descricao: "Solo com muitos pedaços de rochas e calcário. É comum em regiões secas ou montanhosas.",
       curiosidade: "O calcário é muito usado pelos agricultores para 'corrigir' a acidez de outros solos antes do plantio.",
       culturas: ["Uva", "Pastagem", "Trigo"],
-      imagem: "imagens/calcario.jpg"
+      imagem: "imagem/centro-oeste.jpeg"
     }
   },
-  estados: {
-    "Paraná": "Terra Roxa",
-    "São Paulo": "Terra Roxa",
-    "Bahia": "Arenoso",
-    "Minas Gerais": "Argiloso",
-    "Amazonas": "Humoso"
+  regiões: {
+    "Sul": "Terra Roxa",
+    "Sudeste": "Argiloso",
+    "Nordeste": "Arenoso",
+    "Cenro-oeste": "Calcário",
+    "Norte": "Humoso"
   },
   quiz: [
     {
