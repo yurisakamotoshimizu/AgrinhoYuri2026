@@ -16,17 +16,18 @@
   <main>
     <section id="secao-mapa">
       <h2>🗺️ Mapa Interativo de Solos</h2>
-      <p>Clique em uma Região no mapa para descobrir o tipo de solo predominante:</p>
+      <p>Clique em uma das Regiões abaixo para descobrir o tipo de solo predominante no mapa:</p>
+      
+      <div class="botoes-regioes" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+        <button onclick="mostrarSolo('Região Norte')" style="background-color: #2e7d32; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">🟢 Região Norte</button>
+        <button onclick="mostrarSolo('Região Nordeste')" style="background-color: #f57f17; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">🟠 Região Nordeste</button>
+        <button onclick="mostrarSolo('Região Centro-Oeste')" style="background-color: #fbc02d; color: #333; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">🟡 Região Centro-Oeste</button>
+        <button onclick="mostrarSolo('Região Sudeste')" style="background-color: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">🔴 Região Sudeste</button>
+        <button onclick="mostrarSolo('Região Sul')" style="background-color: #1976d2; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer;">🔵 Região Sul</button>
+      </div>
       
       <div class="mapa-container">
-        <img src="imagem/brasil.jpeg" usemap="#brazilmap" alt="Mapa do Brasil por Regiões" class="mapa-img">
-        <map name="brazilmap">
-          <area shape="rect" coords="100,150,200,230" alt="Região Norte" href="#" onclick="mostrarSolo('Região Norte'); return false;">
-          <area shape="rect" coords="300,200,380,280" alt="Região Nordeste" href="#" onclick="mostrarSolo('Região Nordeste'); return false;">
-          <area shape="rect" coords="250,250,320,299" alt="Região Centro-Oeste" href="#" onclick="mostrarSolo('Região Centro-Oeste'); return false;">
-          <area shape="rect" coords="220,300,290,349" alt="Região Sudeste" href="#" onclick="mostrarSolo('Região Sudeste'); return false;">
-          <area shape="rect" coords="200,350,280,400" alt="Região Sul" href="#" onclick="mostrarSolo('Região Sul'); return false;">
-        </map>
+        <img src="imagem/brasil.jpeg" alt="Mapa do Brasil por Regiões" class="mapa-img">
       </div>
       
       <div id="info-estado" class="escondido">
