@@ -5,7 +5,7 @@ const dadosProjeto = {
       descricao: "Solo avermelhado e ultra fértil devido à decomposição de rochas basálticas. Muito comum no Paraná!",
       curiosidade: "Os imigrantes italianos o chamavam de 'terra rossa' (terra vermelha), e os brasileiros adaptaram para 'roxa'!",
       culturas: ["Café", "Soja", "Milho"],
-      imagem: "imagem/sul"
+      img src: "imagem/sul.jpeg"
     },
     "Argiloso": {
       descricao: "Composto por partículas muito pequenas de argila. Retém muita água, ficando barro quando chove e rachado quando seca.",
