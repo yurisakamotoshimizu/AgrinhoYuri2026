@@ -4,6 +4,7 @@ Para a criação e estruturação do código deste projeto, foi utilizada a assi
 Preciso de ajuda para programar um projeto educativo sobre os tipos de terras e solos das 5 regiões do Brasil (Norte, Nordeste, Centro-Oeste, Sudeste e Sul).
 O programa deve funcionar da seguinte maneira:
 Menu de Navegação: O usuário deve conseguir escolher uma das 5 regiões para ler uma explicação detalhada sobre os principais tipos de solo daquela área e suas características agrícolas.
+Simulador de plantio: escreva em que solo, a planta que será plantado e o clima para que o pública vejo se é boa ou não o que vai plantar na terra.
 Quiz Final: Após o usuário ler sobre as regiões, o sistema deve liberar um quiz com perguntas de múltipla escolha (perguntas de 'X').
 Certificado: Se o usuário responder corretamente às perguntas, o programa deve gerar e exibir na tela um certificado personalizado mostrando que ele concluiu o aprendizado e apresentou o conhecimento sobre as terras do Brasil.
 Por favor, monte a estrutura lógica e o código base para esse sistema.
