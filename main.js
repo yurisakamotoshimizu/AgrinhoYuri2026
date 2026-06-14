@@ -5,7 +5,7 @@ const dadosProjeto = {
       descricao: "Solo avermelhado e ultra fértil devido à decomposição de rochas basálticas. Muito comum no Paraná!",
       curiosidade: "Os imigrantes italianos o chamavam de 'terra rossa' (terra vermelha), e os brasileiros adaptaram para 'roxa'!",
       culturas: ["Café", "Soja", "Milho"],
-      imagem: "imagens/terra-roxa.jpg"
+      imagem: ""
     },
     "Argiloso": {
       descricao: "Composto por partículas muito pequenas de argila. Retém muita água, ficando barro quando chove e rachado quando seca.",
@@ -121,7 +121,7 @@ function simularPlantio() {
     divResultado.innerHTML = `⚠️ <b>Alerta de Seca!</b> O solo Arenoso já não segura água, sem chuva a plantação de ${cultura} murchou.<br>💧 <i>Dica Sustentável:</i> Use cobertura morta (palhada) para manter a umidade do solo!`;
   } else if (chuva === "Muita" && solo === "Argiloso") {
     divResultado.className = "erro";
-    divResultado.innerHTML = `🌊 <b>Solo Encharcado!</b> O solo Argiloso retém muita água. Com muita chuva, as raízes do seu ${cultura} apodreceram.<br>🚜 <i>Dica Sustentável:</i> Crie canais de drenagem naturais e evite compactar o solo com tratores pesados.`;
+    divResultado.innerHTML = `🌊 <b>Solo Encharcado!</b> O solo Argiloso retém muita água. Com muita chuva, as raíces do seu ${cultura} apodreceram.<br>🚜 <i>Dica Sustentável:</i> Crie canais de drenagem naturais e evite compactar o solo com tratores pesados.`;
   } else if (!gostaDaCultura) {
     divResultado.className = "alerta";
     divResultado.innerHTML = `⚖️ <b>Produção Média!</b> O solo ${solo} não é o mais indicado para ${cultura}, mas com as técnicas certas você colheu um pouco.<br>🧪 <i>Dica Sustentável:</i> Faça uma análise do solo em laboratório para corrigir os nutrientes antes de plantar.`;
@@ -150,7 +150,7 @@ function mostrarPerguntaQuiz() {
     
     q.opcoes.forEach(opcao => {
       const botao = document.createElement("button");
-      botao.innerText = opacity = opcao;
+      botao.innerText = opcao; // Bug fixado aqui!
       botao.onclick = () => avaliarResposta(opcao, q.resposta, q.explicacao);
       containerRespostas.appendChild(botao);
     });
@@ -180,7 +180,7 @@ function avaliarResposta(escolhida, correta, explicacao) {
     feedback.innerHTML = `❌ Errado! A resposta certa era: ${correta}. <br>${explicacao}`;
   }
 
-  // Espera 4 segundos para o aluno ler a explicação e vai para a próxima
+  // Espera 4,5 segundos para o aluno ler a explicação e vai para a próxima
   setTimeout(() => {
     perguntaAtual++;
     mostrarPerguntaQuiz();
