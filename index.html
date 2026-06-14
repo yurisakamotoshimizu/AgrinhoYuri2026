@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solo Brasil - Agrinho 2026</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,30 +16,30 @@
   <main>
     <section id="secao-mapa">
       <h2>🗺️ Mapa Interativo de Solos</h2>
-      <p>Clique em um estado para descobrir o tipo de solo predominante:</p>
+      <p>Clique em uma Região no mapa para descobrir o tipo de solo predominante:</p>
       
       <div class="mapa-container">
-        <img src="imagem/brasil.jpeg" usemap="#brazilmap" alt="Mapa do Brasil" class="mapa-img">
+        <img src="imagem/brasil.jpeg" usemap="#brazilmap" alt="Mapa do Brasil por Regiões" class="mapa-img">
         <map name="brazilmap">
-          <area shape="rect" coords="200,350,280,400" alt="Paraná" href="#" onclick="mostrarSolo('Paraná'); return false;">
-          <area shape="rect" coords="220,300,290,349" alt="São Paulo" href="#" onclick="mostrarSolo('São Paulo'); return false;">
-          <area shape="rect" coords="300,200,380,280" alt="Bahia" href="#" onclick="mostrarSolo('Bahia'); return false;">
-          <area shape="rect" coords="250,250,320,299" alt="Minas Gerais" href="#" onclick="mostrarSolo('Minas Gerais'); return false;">
-          <area shape="rect" coords="100,150,200,230" alt="Amazonas" href="#" onclick="mostrarSolo('Amazonas'); return false;">
+          <area shape="rect" coords="100,150,200,230" alt="Região Norte" href="#" onclick="mostrarSolo('Região Norte'); return false;">
+          <area shape="rect" coords="300,200,380,280" alt="Região Nordeste" href="#" onclick="mostrarSolo('Região Nordeste'); return false;">
+          <area shape="rect" coords="250,250,320,299" alt="Região Centro-Oeste" href="#" onclick="mostrarSolo('Região Centro-Oeste'); return false;">
+          <area shape="rect" coords="220,300,290,349" alt="Região Sudeste" href="#" onclick="mostrarSolo('Região Sudeste'); return false;">
+          <area shape="rect" coords="200,350,280,400" alt="Região Sul" href="#" onclick="mostrarSolo('Região Sul'); return false;">
         </map>
       </div>
       
       <div id="info-estado" class="escondido">
-        <h3 id="nome-estado">Estado</h3>
+        <h3 id="nome-estado">Região Selecionada</h3>
         <p><b>Solo Predominante:</b> <span id="tipo-solo-estado">-</span></p>
         <p id="desc-solo-estado">-</p>
-        <img id="img-solo-estado" src="" alt="Foto do solo" style="max-width: 200px; margin-top: 10px; border-radius: 8px;">
+        <img id="img-solo-estado" src="" alt="Foto do solo da região" style="max-width: 250px; margin-top: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       </div>
     </section>
 
     <section id="secao-biblioteca">
-      <h2>📚 Biblioteca de Solos</h2>
-      <p>Conheça as características de cada tipo de solo:</p>
+      <h2>📚 Biblioteca de Solos das Regiões</h2>
+      <p>Conheça as características dos solos de cada canto do Brasil:</p>
       <div id="solos-container"></div>
     </section>
 
@@ -50,11 +50,11 @@
       <div class="simulador-controles">
         <label>Escolha o Solo:
           <select id="sim-solo">
-            <option value="Terra Roxa">Terra Roxa</option>
-            <option value="Argiloso">Argiloso</option>
-            <option value="Arenoso">Arenoso</option>
-            <option value="Humoso">Humoso</option>
-            <option value="Calcário">Calcário</option>
+            <option value="Terra Roxa (Típico do Sul/Sudeste)">Terra Roxa</option>
+            <option value="Argiloso (Comum no Sudeste)">Argiloso</option>
+            <option value="Arenoso (Comum no Nordeste)">Arenoso</option>
+            <option value="Humoso (Típico do Norte)">Humoso</option>
+            <option value="Calcário (Comum no Centro-Oeste)">Calcário</option>
           </select>
         </label>
 
@@ -96,7 +96,7 @@
       <div class="certificado-box">
         <h2>🏅 CERTIFICADO DE JUNIOR ESPECIALISTA 🏅</h2>
         <p>Certificamos que o aluno do 3º Ano concluiu os desafios do projeto <b>Solo Brasil</b> e aprendeu a cuidar da nossa terra com sustentabilidade!</p>
-        <p class="data-certificado">Agrinho 2026 - Paraná</p>
+        <p class="data-certificado">Agrinho 2026 • Aprendizado Regional</p>
         <button onclick="window.print()">🖨️ Imprimir Certificado</button>
       </div>
     </section>

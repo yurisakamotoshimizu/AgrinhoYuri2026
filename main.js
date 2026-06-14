@@ -1,43 +1,43 @@
 // Dados integrados diretamente para evitar erros no GitHub Pages
 const dadosProjeto = {
   solos: {
-    "Terra Roxa": {
-      descricao: "Solo avermelhado e ultra fértil devido à decomposição de rochas basálticas. Muito comum no Paraná!",
+    "Terra Roxa (Típico do Sul/Sudeste)": {
+      descricao: "Solo avermelhado e ultra fértil devido à decomposição de rochas basálticas. Muito comum na Região Sul e Sudeste!",
       curiosidade: "Os imigrantes italianos o chamavam de 'terra rossa' (terra vermelha), e os brasileiros adaptaram para 'roxa'!",
       culturas: ["Café", "Soja", "Milho"],
-      imagem: "imagem/sul.jpeg"
+      imagem: "imagem/sul.jpeg" // Foto do Sul aplicada aqui
     },
-    "Argiloso": {
+    "Argiloso (Comum no Sudeste)": {
       descricao: "Composto por partículas muito pequenas de argila. Retém muita água, ficando barro quando chove e rachado quando seca.",
       curiosidade: "É excelente para segurar nutrientes, mas o agricultor precisa cuidar para não encharcar as raízes.",
       culturas: ["Arroz", "Milho", "Soja"],
-      imagem: "imagem/suldeste.jpeg"
+      imagem: "imagem/sudeste.jpeg" // Foto do Sudeste aplicada aqui
     },
-    "Arenoso": {
+    "Arenoso (Comum no Nordeste)": {
       descricao: "Solo leve, com textura de areia. A água passa muito rápido por ele (alta drenagem), levando embora os nutrientes.",
       curiosidade: "Precisa de muita matéria orgânica (adubo natural) e irrigação controlada para produzir bem.",
       culturas: ["Mandioca", "Pastagem", "Abacaxi"],
-      imagem: "imagem/nordeste.jpeg"
+      imagem: "imagem/nordeste.jpeg" // Foto do Nordeste aplicada aqui
     },
-    "Humoso": {
-      descricao: "Também conhecido como terra preta. É riquíssimo em matéria orgânica (folhas e restos de plantas decompostas).",
+    "Humoso (Típico do Norte)": {
+      descricao: "Também conhecido como terra preta. É riquíssimo em matéria orgânica (folhas e restos de plantas decompostas da floresta).",
       curiosidade: "É o solo favorito das minhocas e hortas caseiras por ser super fofo e nutritivo.",
       culturas: ["Hortaliças", "Milho", "Legumes"],
-      imagem: "imagem/norte.jpeg"
+      imagem: "imagem/norte.jpeg" // Foto do Norte aplicada aqui
     },
-    "Calcário": {
-      descricao: "Solo com muitos pedaços de rochas e calcário. É comum em regiões secas ou montanhosas.",
-      curiosidade: "O calcário é muito usado pelos agricultores para 'corrigir' a acidez de outros solos antes do plantio.",
+    "Calcário (Comum no Centro-Oeste)": {
+      descricao: "Solo com muitos pedaços de rochas e calcário. É muito comum em regiões de cerrado e áreas mais secas.",
+      curiosidade: "O calcário é extraído e usado pelos agricultores para 'corrigir' a acidez de outros solos antes do plantio.",
       culturas: ["Uva", "Pastagem", "Trigo"],
-      imagem: "imagem/centro-oeste.jpeg"
+      imagem: "imagem/centro-oeste.jpeg" // Foto do Centro-Oeste aplicada aqui
     }
   },
-  regiões: {
-    "Sul": "Terra Roxa",
-    "Sudeste": "Argiloso",
-    "Nordeste": "Arenoso",
-    "Cenro-oeste": "Calcário",
-    "Norte": "Humoso"
+  estados: {
+    "Região Sul": "Terra Roxa (Típico do Sul/Sudeste)",
+    "Região Sudeste": "Argiloso (Comum no Sudeste)",
+    "Região Nordeste": "Arenoso (Comum no Nordeste)",
+    "Região Norte": "Humoso (Típico do Norte)",
+    "Região Centro-Oeste": "Calcário (Comum no Centro-Oeste)"
   },
   quiz: [
     {
@@ -78,8 +78,8 @@ function mostrarSolo(nomeEstado) {
   const divInfo = document.getElementById("info-estado");
   divInfo.classList.remove("escondido");
   
-  document.getElementById("nome-estado").innerText = `📍 Estado selecionado: ${nomeEstado}`;
-  document.getElementById("tipo-solo-estado").innerText = tipoSolo;
+  document.getElementById("nome-estado").innerText = `📍 Região selecionada: ${nomeEstado}`;
+  document.getElementById("tipo-solo-estado").innerText = tipoSolo.split(" (")[0]; // Remove o texto do parênteses para ficar limpo
   document.getElementById("desc-solo-estado").innerHTML = `${infoSolo.descricao}<br><br>💡 <b>Curiosidade:</b> ${infoSolo.curiosidade}`;
   document.getElementById("img-solo-estado").src = infoSolo.imagem;
 }
@@ -94,7 +94,7 @@ function criarBiblioteca() {
     card.classList.add("solo-card");
     card.innerHTML = `
       <img src="${info.imagem}" alt="${nome}">
-      <h3>${nome}</h3>
+      <h3>${nome.split(" (")[0]}</h3>
       <p style="font-size: 0.9rem; color: #555;">${info.descricao}</p>
     `;
     container.appendChild(card);
@@ -111,26 +111,26 @@ function simularPlantio() {
   divResultado.classList.remove("escondido");
   const infoSolo = dadosProjeto.solos[solo];
   const gostaDaCultura = infoSolo.culturas.includes(cultura);
+  const nomeSoloLimpo = solo.split(" (")[0];
 
   // Lógica do simulador
   if (chuva === "Ideal" && gostaDaCultura) {
     divResultado.className = "sucesso";
-    divResultado.innerHTML = `🎉 <b>Sucesso Total!</b> O solo ${solo} é perfeito para ${cultura} com chuva ideal. Sua produção foi de 100%! <br>🌱 <i>Dica Sustentável:</i> Pratique a rotação de culturas para manter esse solo sempre saudável!`;
-  } else if (chuva === "Pouca" && solo === "Arenoso") {
+    divResultado.innerHTML = `🎉 <b>Sucesso Total!</b> O solo ${nomeSoloLimpo} é perfeito para ${cultura} com chuva ideal. Sua produção foi de 100%! <br>🌱 <i>Dica Sustentável:</i> Pratique a rotação de culturas para manter esse solo sempre saudável!`;
+  } else if (chuva === "Pouca" && solo.includes("Arenoso")) {
     divResultado.className = "erro";
     divResultado.innerHTML = `⚠️ <b>Alerta de Seca!</b> O solo Arenoso já não segura água, sem chuva a plantação de ${cultura} murchou.<br>💧 <i>Dica Sustentável:</i> Use cobertura morta (palhada) para manter a umidade do solo!`;
-  } else if (chuva === "Muita" && solo === "Argiloso") {
+  } else if (chuva === "Muita" && solo.includes("Argiloso")) {
     divResultado.className = "erro";
-    divResultado.innerHTML = `🌊 <b>Solo Encharcado!</b> O solo Argiloso retém muita água. Com muita chuva, as raíces do seu ${cultura} apodreceram.<br>🚜 <i>Dica Sustentável:</i> Crie canais de drenagem naturais e evite compactar o solo com tratores pesados.`;
+    divResultado.innerHTML = `🌊 <b>Solo Encharcado!</b> O solo Argiloso retém muita água. Com muita chuva, as raízes do seu ${cultura} apodreceram.<br>🚜 <i>Dica Sustentável:</i> Crie canais de drenagem naturais e evite compactar o solo com tratores pesados.`;
   } else if (!gostaDaCultura) {
     divResultado.className = "alerta";
-    divResultado.innerHTML = `⚖️ <b>Produção Média!</b> O solo ${solo} não é o mais indicado para ${cultura}, mas com as técnicas certas você colheu um pouco.<br>🧪 <i>Dica Sustentável:</i> Faça uma análise do solo em laboratório para corrigir os nutrientes antes de plantar.`;
+    divResultado.innerHTML = `⚖️ <b>Produção Média!</b> O solo ${nomeSoloLimpo} não é o mais indicado para ${cultura}, mas com as técnicas certas você colheu um pouco.<br>🧪 <i>Dica Sustentável:</i> Faça uma análise do solo em laboratório para corrigir os nutrientes antes de plantar.`;
   } else {
     divResultado.className = "sucesso";
-    divResultado.innerHTML = `🌾 <b>Boa Colheita!</b> O clima mudou um pouco, mas a combinação de ${solo} e ${cultura} resistiu bem. <br>🍂 <i>Dica Sustentável:</i> Use adubação orgânica para fortalecer as plantas contra variações de clima.`;
+    divResultado.innerHTML = `🌾 <b>Boa Colheita!</b> O clima mudou um pouco, mas a combinação de ${nomeSoloLimpo} e ${cultura} resistiu bem. <br>🍂 <i>Dica Sustentável:</i> Use adubação orgânica para fortalecer as plantas contra variações de clima.`;
   }
   
-  // Se ele simulou, já ajuda a liberar o certificado
   checarLiberacaoCertificado();
 }
 
@@ -150,12 +150,11 @@ function mostrarPerguntaQuiz() {
     
     q.opcoes.forEach(opcao => {
       const botao = document.createElement("button");
-      botao.innerText = opcao; // Bug fixado aqui!
+      botao.innerText = opcao;
       botao.onclick = () => avaliarResposta(opcao, q.resposta, q.explicacao);
       containerRespostas.appendChild(botao);
     });
   } else {
-    // Fim do quiz
     document.getElementById("quiz-container").classList.add("escondido");
     const containerFinal = document.getElementById("resultado-final-quiz");
     containerFinal.classList.remove("escondido");
@@ -168,7 +167,6 @@ function avaliarResposta(escolhida, correta, explicacao) {
   const feedback = document.getElementById("feedback-quiz");
   const botoes = document.getElementById("respostas").querySelectorAll("button");
   
-  // Desativa os botões para não clicar duas vezes
   botoes.forEach(b => b.disabled = true);
 
   if (escolhida === correta) {
@@ -180,7 +178,6 @@ function avaliarResposta(escolhida, correta, explicacao) {
     feedback.innerHTML = `❌ Errado! A resposta certa era: ${correta}. <br>${explicacao}`;
   }
 
-  // Espera 4,5 segundos para o aluno ler a explicação e vai para a próxima
   setTimeout(() => {
     perguntaAtual++;
     mostrarPerguntaQuiz();
@@ -189,7 +186,6 @@ function avaliarResposta(escolhida, correta, explicacao) {
 
 // --- LIBERAÇÃO DO CERTIFICADO ---
 function checarLiberacaoCertificado() {
-  // Se o aluno chegou ao final do quiz ou fez alguma simulação, ele ganha o certificado
   if (perguntaAtual >= dadosProjeto.quiz.length) {
     document.getElementById("secao-certificado").classList.remove("escondido");
   }
